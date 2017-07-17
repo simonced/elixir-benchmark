@@ -1,6 +1,8 @@
 # ElixirBenchmark
 
-**TODO: Add description**
+Simple benchmark tool for console applications.
+
+It calculates the time difference between a starting and an ending time in ms.
 
 ## Installation
 
@@ -9,11 +11,19 @@ by adding `elixirBenchmark` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:elixirBenchmark, "~> 0.1.0"}]
+  [{:elixirBenchmark, github: "simonced/elixir-benchmark", app: false}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/elixirBenchmark](https://hexdocs.pm/elixirBenchmark).
+## Sample
 
+```elixir
+start = Elixirbenchmark.start()
+
+# ... some code...
+
+end = Elixirbenchmark.stop()
+
+Elixirbenchmark.formatMs( start, end )
+|> IO.puts
+```
